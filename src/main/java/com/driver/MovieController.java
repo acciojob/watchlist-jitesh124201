@@ -51,15 +51,15 @@ public class MovieController {
         return new ResponseEntity<>("Success",HttpStatus.ACCEPTED);
     }
 
-    @PutMapping("/add-movie-director-pair")
+//    @PutMapping("/add-movie-director-pair")
     public void addMovieDirectorPair(){
 
     }
-    @GetMapping("/get-movies-by-director-name/{director}")
+//    @GetMapping("/get-movies-by-director-name/{director}")
     public void getMoviesByDirectorName(){
 
     }
-    @DeleteMapping("/delete-all-directors")
+//    @DeleteMapping("/delete-all-directors")
     public void deleteAllDirectors(){
 
     }
