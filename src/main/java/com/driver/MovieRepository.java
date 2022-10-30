@@ -14,12 +14,12 @@ public class MovieRepository {
     List<Movie> movies = new ArrayList<>();
     List<Director> directors = new ArrayList<>();
 
-    // Map<String,Movie> dmap = new HashMap<>();
+    Map<Movie,Director> dmap = new HashMap<>();
     //GetAll movies
-    List<Movie> getAllMovieFromDb(){
-        List<Movie> listMovies = new ArrayList<>();
+    List<String> getAllMovieFromDb(){
+        List<String> listMovies = new ArrayList<>();
         for(Movie mov:movies) {
-            listMovies.add(mov);
+            listMovies.add(mov.getName());
         }
         return listMovies;
     }
@@ -41,24 +41,23 @@ public class MovieRepository {
         directors.add(dir);
     }
 
-    public List<Movie> getMovienameByDb(String name){
-        List<Movie> nameMovie = new ArrayList<>();
+    public Movie getMovienameByDb(String name){
+
         for(Movie mov:movies){
             if(mov.getName().equals(name)){
-                nameMovie.add(mov);
+                return mov;
             }
         }
-        return nameMovie;
+        return null;
     }
 
-    public List<Director> getDirectornameByDb(String name){
-        List<Director> nameDirector = new ArrayList<>();
+    public Director getDirectornameByDb(String name){
         for(Director dir:directors){
             if(dir.getName().equals(name)){
-                nameDirector.add(dir);
+                return dir;
             }
         }
-        return nameDirector;
+        return null;
     }
 
     public void deleteDirectorByName(String name){
@@ -69,7 +68,18 @@ public class MovieRepository {
         }
     }
 
-//    public void Addmapdata(Director dir,Movie mov){
-//        dmap.put(dir.getName(),mov);
-//    }
+    public void pairDirectorMovie(String moviename,String directorname){
+        dmap.put(getMovienameByDb(moviename),getDirectornameByDb(directorname));
+    }
+
+    public List<Movie> getMoviesByDirnameDb(String name){
+        List<Movie> listofmovies = new ArrayList<>();
+        for(Map.Entry<Movie,Director> entry:dmap.entrySet()){
+            if(entry.getValue().getName().equals(name)){
+                listofmovies.add(entry.getKey());
+            }
+        }
+        return listofmovies;
+    }
+
 }

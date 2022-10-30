@@ -51,18 +51,12 @@ public class MovieController {
         return new ResponseEntity<>("Success",HttpStatus.ACCEPTED);
     }
     @PutMapping("/add-movie-director-pair")
-    public ResponseEntity<String> addMovieDirectorPair(){
+    public ResponseEntity addMovieDirectorPair(@RequestParam String moviename,@RequestParam String dirname){
+        movService.pairdirmov(moviename,dirname);
         return new ResponseEntity<>("Success",HttpStatus.OK);
     }
     @GetMapping("/get-movies-by-director-name/{director}")
-    public ResponseEntity<String> getMoviesByDirectorName(){
-        return new ResponseEntity<>("Success",HttpStatus.OK);
+    public ResponseEntity<List<Movie>> getMoviesByDirectorName(@PathVariable String dirname){
+        return new ResponseEntity<>(movService.movieByDirname(dirname),HttpStatus.ACCEPTED);
     }
-
-    @GetMapping("/delete-all-directors")
-    public ResponseEntity<String> deleteAllDirectors(){
-        return new ResponseEntity<>("Success",HttpStatus.OK);
-    }
-
-
 }

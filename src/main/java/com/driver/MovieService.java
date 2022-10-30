@@ -10,16 +10,13 @@ public class MovieService {
     @Autowired
     MovieRepository repository;
 
-    public List<Movie> getAllMovie(){
+    public List<String> getAllMovie(){
         return repository.getAllMovieFromDb();
     }
     public List<Director> getAllDirector(){
         return repository.getAllDirectorFromDb();
     }
 
-//    public void adddirMov(Director name,Movie mov){
-//        repository.Addmapdata(name,mov);
-//    }
 
     public void addMovie(Movie movie){
          repository.addmovieData(movie);
@@ -29,16 +26,23 @@ public class MovieService {
         repository.addDirectorData(director);
     }
 
-    public List<Movie> getMovieName(String name){
+    public Movie getMovieName(String name){
         return repository.getMovienameByDb(name);
     }
 
-    public List<Director> getDirectorName(String name){
+    public Director getDirectorName(String name){
         return repository.getDirectornameByDb(name);
     }
 
     public void deleteDirectorName(String name){
          repository.deleteDirectorByName(name);
+    }
+    public void pairdirmov(String moviename,String dirname){
+        repository.pairDirectorMovie(moviename,dirname);
+    }
+
+    public List<Movie> movieByDirname(String dirname){
+        return repository.getMoviesByDirnameDb(dirname);
     }
 
 }
