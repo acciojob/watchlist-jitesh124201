@@ -82,12 +82,10 @@ public class MovieRepository {
 //        return listofmovies;
 //    }
 
-//    public void deleteAllDirector(String name) {
-//        for(Map.Entry<Movie,Director> entry:dmap.entrySet()){
-//            if(entry.getValue().getName().equals(name)){
-//                dmap.remove(entry.getKey());
-//            }
-//        }
-//    }
+    public void deleteAllDirector() {
+        for(Map.Entry<Movie,Director> entry: dmap.entrySet()){
+            dmap.remove(entry.getKey());
+        }
+    }
 
 }
