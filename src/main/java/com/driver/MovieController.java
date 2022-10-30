@@ -60,4 +60,10 @@ public class MovieController {
         return new ResponseEntity<>(movService.movieByDirname(dirname),HttpStatus.ACCEPTED);
     }
 
+    @DeleteMapping("/delete-all-directors")
+    public ResponseEntity deleteAllDirectors(@RequestParam String name){
+        movService.deleteAllDirector(name);
+        return new ResponseEntity<>("Success",HttpStatus.ACCEPTED);
+    }
+
 }

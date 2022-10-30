@@ -45,4 +45,8 @@ public class MovieService {
         return repository.getMoviesByDirnameDb(dirname);
     }
 
+    public void deleteAllDirector(String name){
+        repository.deleteAllDirector(name);
+    }
+
 }
