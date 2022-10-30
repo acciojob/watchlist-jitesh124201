@@ -51,6 +51,17 @@ public class MovieController {
         return new ResponseEntity<>("Success",HttpStatus.ACCEPTED);
     }
 
+    @PutMapping("/add-movie-director-pair")
+    public void addMovieDirectorPair(){
+
+    }
+    public void getMoviesByDirectorName(){
+
+    }
+    public void deleteAllDirectors(){
+
+    }
+
 
 
 }
