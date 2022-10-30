@@ -50,8 +50,19 @@ public class MovieController {
         movService.deleteDirectorName(name);
         return new ResponseEntity<>("Success",HttpStatus.ACCEPTED);
     }
+    @PutMapping("/add-movie-director-pair")
+    public ResponseEntity addMovieDirectorPair(){
+        return new ResponseEntity<>("Success",HttpStatus.OK);
+    }
+    @GetMapping("/get-movies-by-director-name/{director}")
+    public ResponseEntity getMoviesByDirectorName(){
+        return new ResponseEntity<>("Success",HttpStatus.OK);
+    }
 
-
+    @GetMapping("/delete-all-directors")
+    public ResponseEntity deleteAllDirectors(){
+        return new ResponseEntity<>("Success",HttpStatus.OK);
+    }
 
 
 }
