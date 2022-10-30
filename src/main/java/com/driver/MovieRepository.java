@@ -72,15 +72,15 @@ public class MovieRepository {
         dmap.put(getMovienameByDb(moviename),getDirectornameByDb(directorname));
     }
 
-//    public List<String> getMoviesByDirnameDb(String name){
-//        List<String> listofmovies = new ArrayList<>();
-//        for(Map.Entry<Movie,Director> entry:dmap.entrySet()){
-//            if(entry.getValue().getName().equals(name)){
-//                listofmovies.add(entry.getKey().getName());
-//            }
-//        }
-//        return listofmovies;
-//    }
+    public List<String> getMoviesByDirnameDb(String name){
+        List<String> listofmovies = new ArrayList<>();
+        for(Map.Entry<Movie,Director> entry:dmap.entrySet()){
+            if(entry.getValue().getName().equals(name)){
+                listofmovies.add(entry.getKey().getName());
+            }
+        }
+        return listofmovies;
+    }
 
     public void deleteAllDirector() {
         for(Map.Entry<Movie,Director> entry: dmap.entrySet()){

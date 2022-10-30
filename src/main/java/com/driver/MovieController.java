@@ -55,11 +55,11 @@ public class MovieController {
         movService.pairdirmov(moviename,dirname);
         return new ResponseEntity<>("Success",HttpStatus.OK);
     }
-//    @GetMapping("/get-movies-by-director-name/{director}")
-//    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String dirname){
-//        return new ResponseEntity<>(movService.movieByDirname(dirname),HttpStatus.ACCEPTED);
-//    }
-//
+    @GetMapping("/get-movies-by-director-name/{director}")
+    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String dirname){
+        return new ResponseEntity<>(movService.movieByDirname(dirname),HttpStatus.ACCEPTED);
+    }
+
     @DeleteMapping("/delete-all-directors")
     public ResponseEntity deleteAllDirectors(){
         movService.deleteAllDirector();
