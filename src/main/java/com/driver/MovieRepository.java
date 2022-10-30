@@ -72,11 +72,11 @@ public class MovieRepository {
         dmap.put(getMovienameByDb(moviename),getDirectornameByDb(directorname));
     }
 
-    public List<Movie> getMoviesByDirnameDb(String name){
-        List<Movie> listofmovies = new ArrayList<>();
+    public List<String> getMoviesByDirnameDb(String name){
+        List<String> listofmovies = new ArrayList<>();
         for(Map.Entry<Movie,Director> entry:dmap.entrySet()){
             if(entry.getValue().getName().equals(name)){
-                listofmovies.add(entry.getKey());
+                listofmovies.add(entry.getKey().getName());
             }
         }
         return listofmovies;

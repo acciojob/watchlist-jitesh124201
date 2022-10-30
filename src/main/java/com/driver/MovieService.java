@@ -41,7 +41,7 @@ public class MovieService {
         repository.pairDirectorMovie(moviename,dirname);
     }
 
-    public List<Movie> movieByDirname(String dirname){
+    public List<String> movieByDirname(String dirname){
         return repository.getMoviesByDirnameDb(dirname);
     }
 
