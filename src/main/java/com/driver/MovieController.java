@@ -51,16 +51,16 @@ public class MovieController {
         return new ResponseEntity<>("Success",HttpStatus.ACCEPTED);
     }
     @PutMapping("/add-movie-director-pair")
-    public ResponseEntity addMovieDirectorPair(){
+    public ResponseEntity<String> addMovieDirectorPair(){
         return new ResponseEntity<>("Success",HttpStatus.OK);
     }
     @GetMapping("/get-movies-by-director-name/{director}")
-    public ResponseEntity getMoviesByDirectorName(){
+    public ResponseEntity<String> getMoviesByDirectorName(){
         return new ResponseEntity<>("Success",HttpStatus.OK);
     }
 
     @GetMapping("/delete-all-directors")
-    public ResponseEntity deleteAllDirectors(){
+    public ResponseEntity<String> deleteAllDirectors(){
         return new ResponseEntity<>("Success",HttpStatus.OK);
     }
 

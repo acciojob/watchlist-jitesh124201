@@ -14,7 +14,7 @@ public class MovieRepository {
     List<Movie> movies = new ArrayList<>();
     List<Director> directors = new ArrayList<>();
 
-//    Map<String,Movie> dmap = new HashMap<>();
+    // Map<String,Movie> dmap = new HashMap<>();
     //GetAll movies
     List<Movie> getAllMovieFromDb(){
         List<Movie> listMovies = new ArrayList<>();
@@ -72,9 +72,4 @@ public class MovieRepository {
 //    public void Addmapdata(Director dir,Movie mov){
 //        dmap.put(dir.getName(),mov);
 //    }
-//
-
-
-
-
 }
