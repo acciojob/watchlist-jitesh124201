@@ -55,9 +55,11 @@ public class MovieController {
     public void addMovieDirectorPair(){
 
     }
+    @GetMapping("/get-movies-by-director-name/{director}")
     public void getMoviesByDirectorName(){
 
     }
+    @DeleteMapping("/delete-all-directors")
     public void deleteAllDirectors(){
 
     }
